@@ -1,5 +1,5 @@
 locals {
-  lambda-layer-zip-location = "../app/lambda-layer/python.zip"
+  lambda-layer-zip-location = "../lambda-layer/python.zip"
 }
 
 resource "aws_lambda_layer_version" "test_lambda_layer" {
