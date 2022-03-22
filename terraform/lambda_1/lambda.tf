@@ -2,9 +2,9 @@ locals {
   lambda-zip-location = "../build/lambda_1.zip"
 }
 
-# module "wordpress_social_lambda_layer" {
-#     source  = "../../terraform/wordpress_social_lambda_layer"
-# }
+module "lambda_layer" {
+    source  = "../terraform/lambda_layer"
+}
 
 data "archive_file" "lambda_1" {
   type = "zip"
@@ -20,9 +20,9 @@ resource "aws_lambda_function" "lambda_1" {
   source_code_hash = "${data.archive_file.lambda_1.output_base64sha256}"
   runtime          = "python3.9"
   timeout          =  90
-  # layers = [
-  #   module.wordpress_social_lambda_layer.wordpress_social_lambda_layer_arn
-  # ]
+  layers = [
+    module.lambda_layer.test_lambda_layer_arn
+  ]
 
   tags = {
     Application = "aws-lambda-layer-test"
