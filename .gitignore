@@ -35,3 +35,5 @@ override.tf.json
 *.pycache*
 
 build/
+.DS_Store
+python.zip
