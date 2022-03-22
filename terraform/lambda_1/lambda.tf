@@ -3,7 +3,7 @@ locals {
 }
 
 module "lambda_layer" {
-    source  = "../terraform/lambda_layer"
+    source  = "../../terraform/lambda_layer"
 }
 
 data "archive_file" "lambda_1" {
