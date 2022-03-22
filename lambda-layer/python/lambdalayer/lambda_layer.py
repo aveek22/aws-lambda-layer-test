@@ -14,5 +14,6 @@ def import_layer():
     print(f"********* Importing AWS Lambda Layer **********")
     print(f"...............................................")
     print(f" *** AWS Lambda Layer imported succesfully. ***")
+    print(f"********* Importing AWS Lambda Layer **********")
 
     return True
